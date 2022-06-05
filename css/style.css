@@ -1,0 +1,127 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+.container{
+    max-width: 1200px;
+    /* outline: 1px solid red; */
+    margin: 20px auto;
+}
+
+.siteHeader{
+    padding: 20px;
+    border: 1px solid #c0c0c0;
+    /* overflow: hidden; */
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.siteHeader h1{
+    font-size: 5rem;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+}
+
+.siteHeader-bg{
+    background-image: url("../img/bg_1.jpg");
+    background-size: cover;
+    background-position-x: 50%;
+    background-position-y: -30%;
+    background-repeat: no-repeat;
+    animation-name: headerAnimation;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes headerAnimation{
+    0%{background-position-y: -30%;}
+    100%{background-position-y: 100%;}
+}
+/* Анимация HEADER ---------------------------------------------------------------------------------------------------------------------------------*/
+.buttonMedia{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.buttonMedia input{
+    display: none;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: all 0.4s;
+}
+
+.slider::before{
+    position: absolute;
+    content: "";
+    width: 26px;
+    height: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    transition: all 0.4s;
+}
+
+input:checked + .slider{
+    background-color: #3f454a;
+}
+
+input:focus + .slider{
+    box-shadow: 0 0 1px #3f454a;
+}
+
+input:checked + .slider::before{
+    transform: translateX(26px);
+}
+
+/*переключатель -----------------------------------------------------------------------------------------------------------*/
+
+
+.spider{
+    width: 90px;
+    height: 245px;
+    position: absolute;
+    background-image: url("../img/spider.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: 200px;
+    top: -300px;
+    cursor: pointer;
+}
+
+.spiderAnimation{
+    animation-name: spider;
+    animation-duration: 5s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes spider{
+    0%{top: -300px;}
+    60%{top:  -85px;}
+    70%{top: -130px;}
+    80%{top: -100px;}
+    100%{top: -115px;}
+
+}
